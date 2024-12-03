@@ -1,6 +1,6 @@
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose')
 
-const{dbUsername,dbPassword,dbHost,dbName}=require('./index')
+const { dbUsername, dbPassword, dbHost, dbName } = require('./index')
 
 const connection = async () => {
 	const conn = await mongoose.connect(
@@ -10,4 +10,4 @@ const connection = async () => {
 	console.log(`Mongo DB connected:${conn.connection.host}`);
 };
 
-module.exports={connection,mongoose}
+module.exports = { connection, mongoose }

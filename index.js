@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const { port } = require('./config');
+const { port } = require('./Config/index');
 const { connection } = require('./config/db');
 
 
