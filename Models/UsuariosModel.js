@@ -22,6 +22,7 @@ const UsuariosSchema = new mongoose.Schema({
     rol: {
         type: String,
         enun: ["administrador", "docente"],
+        default: "docente",
         required: true
     }
 }, {
@@ -29,15 +30,15 @@ const UsuariosSchema = new mongoose.Schema({
 })
 
 // Middleware para encriptar la contraseña antes de guardar
-UsuariosSchema.pre("save", async (next) => {
-    if (!this.isModified("password")) return next()
-    const salt = await bcrypt.genSalt(10)
-    this.password = await bcrypt.hash(this.password, salt)
-    next()
-})
+UsuariosSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) return next();
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
 
 // Método para comparar contraseñas
-UserSchema.methods.comparePassword = async (candidatePassword) => {
+UsuariosSchema.methods.comparePassword = async (candidatePassword) => {
     return await bcrypt.compare(candidatePassword, this.password);
 };
 
