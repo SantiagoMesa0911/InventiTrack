@@ -6,7 +6,7 @@ function Usuarios(app) {
     const router = express.Router();
     const UsuarioServicio = new UsuarioServices()
 
-    app.use('/api/inventario', router)
+    app.use('/api/inventario/usuario', router)
 
 
     router.get('/', async (req, res) => {
