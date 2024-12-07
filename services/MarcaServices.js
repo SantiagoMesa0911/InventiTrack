@@ -16,8 +16,8 @@ class MarcaServices {
 
     async CrearMarca(data) {
         try {
-            const NuevoUsuarios = await MarcaModel.create(data)
-            return NuevoUsuarios
+            const NuevaMarca = await MarcaModel.create(data)
+            return NuevaMarca
         } catch (error) {
             console.log(error);
             return {
