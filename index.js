@@ -6,6 +6,7 @@ const { connection } = require('./config/db');
 
 const Usuarios = require('./Routes/Usuarios');
 const Marca = require('./Routes/Marcas');
+const Auth = require('./Auth/AuthRoutes');
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(morgan('dev'));
 
 Usuarios(app)
 Marca(app)
+Auth(app)
 
 app.get("/", (req, res) => {
     return res.json({ name: "API OF THE INVENTITRACK" });
