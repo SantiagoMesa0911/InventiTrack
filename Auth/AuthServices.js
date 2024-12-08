@@ -1,5 +1,5 @@
 const UsuariosModel = require('../Models/UsuariosModel');
-const { generateToken } = require('../Utils/jwt');
+const generateToken = require('../Utils/jwt');
 
 class AuthServices {
     async login(req, res) {

@@ -16,12 +16,27 @@ class MarcaServices {
 
     async CrearMarca(data) {
         try {
-            const NuevoUsuarios = await MarcaModel.create(data)
-            return NuevoUsuarios
+            const NuevaMarca = await MarcaModel.create(data)
+            return NuevaMarca
         } catch (error) {
             console.log(error);
             return {
                 error: 'Error al crear la marcas'
+            }
+        }
+    }
+
+    async ActualizarMarca(id, data) {
+        try {
+            const MarcaActualizada = await MarcaModel.findByIdAndUpdate(id, data, { new: true })
+            if (!MarcaActualizada) {
+                return { error: 'Marca no encontrada' }
+            }
+            return MarcaActualizada
+        } catch (error) {
+            console.log(error);
+            return {
+                error: 'Error al actualizar la marca'
             }
         }
     }

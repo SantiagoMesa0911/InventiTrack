@@ -23,6 +23,16 @@ class UsuarioServices {
             return { error: 'Error al crear el género' };
         }
     }
+
+    async ActualizarUsuario(id, data) {
+        try {
+            const usuarioActualizado = await UsuarioModel.findByIdAndUpdate(id, data, { new: true })
+            return usuarioActualizado
+        } catch (error) {
+            console.error(error);
+            return { error: 'Error al actualizar el usuario' };
+        }
+    }
 }
 
 module.exports = UsuarioServices;
