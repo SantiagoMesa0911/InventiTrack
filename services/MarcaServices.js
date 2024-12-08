@@ -25,5 +25,20 @@ class MarcaServices {
             }
         }
     }
+
+    async ActualizarMarca(id, data) {
+        try {
+            const MarcaActualizada = await MarcaModel.findByIdAndUpdate(id, data, { new: true })
+            if (!MarcaActualizada) {
+                return { error: 'Marca no encontrada' }
+            }
+            return MarcaActualizada
+        } catch (error) {
+            console.log(error);
+            return {
+                error: 'Error al actualizar la marca'
+            }
+        }
+    }
 }
 module.exports = MarcaServices

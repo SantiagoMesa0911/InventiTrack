@@ -37,8 +37,18 @@ UsuariosSchema.pre("save", async function (next) {
     next();
 });
 
+UsuariosSchema.pre("findOneAndUpdate", async function (next) {
+    const update = this.getUpdate();
+    if (update.password || update.email) {
+        delete update.password
+        delete update.email
+    }
+
+    next();
+})
+
 // Método para comparar contraseñas
-UsuariosSchema.methods.comparePassword = async function(candidatePassword) {
+UsuariosSchema.methods.comparePassword = async function (candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password);
 };
 
