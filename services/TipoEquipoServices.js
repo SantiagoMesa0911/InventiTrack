@@ -25,5 +25,18 @@ class TipoEquipoServices {
             }
         }
     }
+
+    async ActualizarTipoEquipo(id, data) {
+        try {
+            const TipoEquipoActualizado = await TipoEquipoModel.findByIdAndUpdate(id, data, { new: true })
+            return TipoEquipoActualizado
+        } catch (error) {
+            console.log(error);
+            return{
+                error: "Error al actualizar el tipo de equipo"
+            }
+
+        }
+    }
 }
 module.exports = TipoEquipoServices
