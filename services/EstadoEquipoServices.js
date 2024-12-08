@@ -25,5 +25,19 @@ class EstadoEquipoServices {
             }
         }
     }
+
+    async ActualizarEstadoEquipo(id, data) {
+        try {
+            const EstadoEquipoActualizado = await EstadoEquipoModel.findByIdAndUpdate(id, data, { new: true })
+            return EstadoEquipoActualizado
+
+        } catch (error) {
+            console.log(error);
+            return{
+                error: "Error al actualizar el estado de equipo"
+            }
+
+        }
+    }
 }
 module.exports = EstadoEquipoServices
