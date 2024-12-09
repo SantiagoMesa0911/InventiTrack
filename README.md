@@ -34,10 +34,10 @@ Asegúrate de cumplir con los siguientes requisitos antes de ejecutar el proyect
 
 > email: admin@gmail.com && password :admin123
 
-##Usuario Docente
+## Usuario Docente
 
 > email: docente@gmail.com && password :docente
 
-##Creadores
+## Creadores
 -Tatiana Orozco
 -Santiago Mesa
