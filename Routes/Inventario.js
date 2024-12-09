@@ -9,7 +9,7 @@ function Inventario(app) {
 
     app.use('/api/inventario', router)
 
-    router.get('/', authenticate, authorize(['administrador']), async (req, res) => {
+    router.get('/', authenticate, authorize(['administrador','docente']), async (req, res) => {
         const inventarios = await inventarioServicio.ObtenerInventario()
         if (inventarios.error) {
             return res.status(500).json({ error: inventarios.error })
