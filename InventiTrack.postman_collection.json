@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "8f8b3606-7b10-46bd-adf4-1a52cd144140",
+		"name": "InventiTrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38153185",
+		"_collection_link": "https://films7.postman.co/workspace/InventiTrack-Workspace~3e7b59ec-2dcd-4790-9e7f-18f5a562733e/collection/38153185-8f8b3606-7b10-46bd-adf4-1a52cd144140?action=share&source=collection_link&creator=38153185"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/usuario",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Docente \",\r\n    \"email\": \"docente@gmail.com\",\r\n    \"estado\": true,\r\n    \"password\": \"docente123\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/usuario/crear",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usuario",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Santi Mesa \",\r\n    \"estado\": true,\r\n    \"rol\": \"administrador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/usuario/actualizar/6754dd81ff1592d3433180a0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usuario",
+								"actualizar",
+								"6754dd81ff1592d3433180a0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Marca",
+			"item": [
+				{
+					"name": "Obtener Marcas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTRjN2MyOGRmMmFkNzYwYjg5MWZkOSIsInJvbCI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MzM2MTQ0ODEsImV4cCI6MTczMzYxODA4MX0.64v-5HTtl1ImJxDI3LOLI-3zEuk4Br0zK3KT2meMUzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/marcas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"marcas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Marcas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"HP\",\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/marcas/crear",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"marcas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Marca",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"HP\",\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/marcas/actualizar/67538d3dffe92e3081a6321a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"marcas",
+								"actualizar",
+								"67538d3dffe92e3081a6321a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tatianaorozco5@gmail.com\",\r\n    \"password\": \"uno12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoEquipo",
+			"item": [
+				{
+					"name": "Obtener Tipo Equipo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTRjN2MyOGRmMmFkNzYwYjg5MWZkOSIsInJvbCI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MzM2MDk1NjcsImV4cCI6MTczMzYxMzE2N30.iHnnGWO9gE0_jXASxXiwjdQ6lxsg35bOza-Xmk8s3gA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/tipoequipo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tipoequipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Tipo Equipo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Moviles\",\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tipoequipo/crear",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tipoequipo",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Tipo Equipo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Computo\",\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tipoequipo/actualizar/6754c6482d4c1fa498735020",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tipoequipo",
+								"actualizar",
+								"6754c6482d4c1fa498735020"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EstadoEquipo",
+			"item": [
+				{
+					"name": "Obtener Estado Equipo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/estadoequipo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"estadoequipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Estado Equipo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/estadoequipo/crear",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"estadoequipo",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Estado Equipo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"en_uso\",\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/estadoequipo/actualizar/6754d524942d14a9bf746d22",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"estadoequipo",
+								"actualizar",
+								"6754d524942d14a9bf746d22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "Obtener inventario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTRjN2MyOGRmMmFkNzYwYjg5MWZkOSIsInJvbCI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MzM3MDExNDIsImV4cCI6MTczMzcwNDc0Mn0.jaLebpoU-ZLswXr1j5xY5GROrNv9c_VP9wFiw3FKD64",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}",
+							"host": [
+								"{{base_url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Invetario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"modelo\": \"X1000\",\r\n  \"descripcion\": \"Computadora portátil de alto rendimiento\",\r\n  \"foto\": \"https://example.com/images/x1000.jpg\",\r\n  \"color\": \"Negro\",\r\n  \"fechaCompra\": \"2024-12-01T00:00:00.000Z\",\r\n  \"precio\": 1200.50,\r\n  \"usuario\": \"6754c7c28df2ad760b891fd9\",  // ID de un usuario activo en la base de datos\r\n  \"marca\": \"67538d3dffe92e3081a6321a\",  // ID de una marca activa en la base de datos\r\n  \"estadoEquipo\": \"6754d544942d14a9bf746d24\",  // ID de un estado activo del equipo\r\n  \"tipoEquipo\": \"6754c6482d4c1fa498735020\"  // ID de un tipo de equipo activo\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/crear",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Invetario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"modelo\": \"X1000 PRO\",\r\n  \"descripcion\": \"Computadora portátil de alto rendimiento\",\r\n  \"foto\": \"https://example.com/images/x1000.jpg\",\r\n  \"color\": \"Negro\",\r\n  \"fechaCompra\": \"2024-12-01T00:00:00.000Z\",\r\n  \"precio\": 1200.50,\r\n  \"usuario\": \"6754c7c28df2ad760b891fd9\",  // ID de un usuario activo en la base de datos\r\n  \"marca\": \"67538d3dffe92e3081a6321a\",  // ID de una marca activa en la base de datos\r\n  \"estadoEquipo\": \"6754d544942d14a9bf746d24\",  // ID de un estado activo del equipo\r\n  \"tipoEquipo\": \"6754c6482d4c1fa498735020\"  // ID de un tipo de equipo activo\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/actualizar/675633da9821dbeedf0a5f99",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"actualizar",
+								"675633da9821dbeedf0a5f99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
