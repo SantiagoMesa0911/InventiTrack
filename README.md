@@ -39,5 +39,5 @@ Asegúrate de cumplir con los siguientes requisitos antes de ejecutar el proyect
 > email: docente@gmail.com && password :docente
 
 ## Creadores
--Tatiana Orozco
--Santiago Mesa
+- Tatiana Orozco
+- Santiago Mesa
