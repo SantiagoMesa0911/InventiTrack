@@ -1,11 +1,13 @@
 // src/models/Inventario.js
 const mongoose = require('mongoose');
+const { v4: uuidv4 } = require('uuid')
 
 const InventarioSchema = new mongoose.Schema({
     serial: {
         type: String,
         unique: true,
-        required: true
+        required: true,
+        default: uuidv4
     },
     modelo: {
         type: String,
