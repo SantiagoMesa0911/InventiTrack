@@ -9,6 +9,7 @@ const Marca = require('./Routes/Marcas');
 const Auth = require('./Auth/AuthRoutes');
 const TipoEquipo = require('./Routes/TipoEquipo');
 const EstadoEquipo = require('./Routes/EstadoEquipo');
+const Inventario = require('./Routes/Inventario');
 
 
 const app = express();
@@ -24,6 +25,7 @@ Marca(app)
 Auth(app)
 TipoEquipo(app)
 EstadoEquipo(app)
+Inventario(app)
 
 app.get("/", (req, res) => {
     return res.json({ name: "API OF THE INVENTITRACK" });
